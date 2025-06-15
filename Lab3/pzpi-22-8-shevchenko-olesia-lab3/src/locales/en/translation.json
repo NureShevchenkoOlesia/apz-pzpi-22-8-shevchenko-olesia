@@ -1,0 +1,252 @@
+{
+  "event": {
+    "date": "Date",
+    "viewDetails": "View Details"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "navbar": {
+    "home": "Home",
+    "search": "Search",
+    "gallery": "Gallery",
+    "events": "Events"
+  },
+  "profileMenu": {
+    "myProfile": "My Profile",
+    "dashboard": "Dashboard",
+    "newObservation": "New Observation",
+    "settings": "Settings",
+    "logout": "Logout",
+    "deleteAccount": "Delete Account"
+  },
+  "searchBar": {
+    "placeholder": "Search users, observations, or objects...",
+    "all": "All",
+    "users": "Users",
+    "observations": "Observations",
+    "objects": "Objects",
+    "button": "Search"
+  },
+  "subscribeEventForm": {
+    "enterEmail": "Enter your email",
+    "subscribe": "Subscribe",
+    "subscribedMessage": "You are subscribed to this event!",
+    "failedSubscribe": "Failed to subscribe"
+  },
+  "dashboard": {
+    "latestObservations": "Your Latest Observations",
+    "noObservations": "You have no observations yet.",
+    "observedOn": "Observed on {{date}}",
+    "subscribedEvents": "Events You're Subscribed To",
+    "noSubscribedEvents": "You’re not subscribed to any events."
+  },
+  "editObservation": {
+    "title": "Edit Your Observation",
+    "subtitle": "Make changes and update your sky photo",
+    "labelTitle": "Title",
+    "labelDescription": "Description (optional)",
+    "placeholderTitle": "Give your observation a cool title",
+    "placeholderDescription": "Tell us more about what you observed...",
+    "calibration": "Calibration Data",
+    "objectsInField": "Objects in Field",
+    "hideObjects": "Hide Objects",
+    "showObjects": "Show Objects ({{count}})",
+    "object": "Object",
+    "objectPlaceholder": "Object Name",
+    "save": "Save Changes",
+    "loading": "Loading...",
+    "loadFail": "Failed to load observation",
+    "fetchError": "Error fetching observation.",
+    "success": "Observation updated successfully!",
+    "updateFail": "Update failed",
+    "updateError": "Something went wrong. Check the console."
+  },
+  "editProfile": {
+    "title": "Edit Your Profile",
+    "username": "Username",
+    "usernamePlaceholder": "Your username",
+    "bio": "Bio",
+    "bioPlaceholder": "Tell something about yourself",
+    "avatarLabel": "Upload New Avatar",
+    "save": "Save Changes",
+    "updateError": "Error updating profile",
+    "unknownError": "Unknown error"
+  },
+  "events": {
+    "title": "Upcoming Solar Events",
+    "filter": {
+      "all": "All Types",
+      "flr": "Solar Flare (FLR)",
+      "gst": "Geomagnetic Storm (GST)"
+    },
+    "clear": "Clear",
+    "class": "Class",
+    "follow": "Follow",
+    "following": "Following",
+    "subscribed": "The subscription is successful. The email is sent.",
+    "subscriptionError": "Subscription error",
+    "moreInfo": "More info",
+    "close": "Close"
+  },
+  "forgot": {
+    "title": "Reset Password",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "button": "Send Reset Link",
+    "success": "Check your email for reset link.",
+    "error": "Something went wrong."
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Find your perfect view!",
+    "by": "By",
+    "calibration": "Calibration:",
+    "noCalibration": "No calibration data.",
+    "showObjects": "Show Objects ({{count}})",
+    "hideObjects": "Hide Objects",
+    "noObjects": "No objects found.",
+    "close": "Close"
+  },
+  "home": {
+    "joinCommunityLine1": "Join Our Vibrant",
+    "joinCommunityLine2": "Community Today",
+    "description": "Welcome to a place where astronomy enthusiasts unite to share their observations and insights. Connect with fellow stargazers and explore the wonders of the universe together.",
+    "aboutTitle": "Join a vibrant community of astronomy enthusiasts and share your passion.",
+    "aboutText": "Our platform connects astronomy amateurs from around the world, allowing you to share observations, insights, and experiences. Discover new perspectives and enhance your knowledge in a supportive environment.",
+    "features": {
+      "communityTitle": "Community",
+      "communityText": "Share your discoveries and learn from others.",
+      "exploreTitle": "Explore",
+      "exploreText": "Engage with fellow stargazers and expand your horizons."
+    },
+    "galleryTitle": "Discover the Universe Together",
+    "galleryText": "Join a vibrant community of astronomy enthusiasts. Share your observations and insights.",
+    "galleryCard1": {
+      "title": "Share Your Astronomical Observations",
+      "text": "Easily upload and showcase your celestial findings."
+    },
+    "galleryCard2": {
+      "title": "Engage with Fellow Astronomy Lovers",
+      "text": "Comment on observations and exchange ideas."
+    },
+    "galleryCard3": {
+      "title": "Create Your Unique User Profile",
+      "text": "Personalize your experience and connect with others."
+    },
+    "creator": {
+      "title": "Our Dearest Creator",
+      "description": "Passionate space enthusiast building a welcoming community",
+      "name": "Olesia Shevchenko",
+      "role": "Software Engineering student",
+      "quote": "Olesia has always been obsessed with the stars, so naturally, she just had to drag you into it too."
+    },
+    "callToAction": {
+      "title": "Join Our Astronomy Community",
+      "subtitle": "Share your celestial observations and connect with fellow astronomy enthusiasts today!"
+    },
+    "subscription": {
+      "title": "Want to contribute to the Cosmorum?",
+      "text": "If you would like to become or are a member of our stellar community, and have any questions or suggestions, feel free to contact us. We will appreciate any help in improving the Cosmorum, baby!",
+      "copyHint": "Feel free to copy the address and write us anytime."
+    }
+  },
+  "buttonsHome": {
+    "join": "Join",
+    "addObservation": "Add Observation",
+    "learnMore": "Learn More",
+    "copy": "Copy"
+  },
+  "login": {
+    "title": "Welcome back",
+    "usernameLabel": "Username",
+    "usernamePlaceholder": "your name <3",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Your password",
+    "forgot": "Forgot your password?",
+    "reset": "Reset it",
+    "noAccount": "Don’t have an account?"
+  },
+  "buttons": {
+    "login": "Log In",
+    "signup": "Sign up"
+  },
+  "profile": {
+    "welcomeMessage": "There's nothing for you, baby.",
+    "editProfile": "Edit Profile",
+    "myObservations": "My Observations",
+    "addObservation": "Add Observation",
+    "observationsCount": "observations",
+    "starBaby": "🌌 star baby",
+    "deleteConfirmation": "Are you sure you want to delete this observation?",
+    "observationDeleted": "Observation deleted!",
+    "deleteFailed": "Failed to delete: ",
+    "deleteError": "Something went wrong. Check the console.",
+    "calibration": "Calibration:",
+    "noCalibration": "No calibration data.",
+    "showObjects": "Show Objects ",
+    "hideObjects": "Hide Objects",
+    "noObjects": "No objects found.",
+    "location": "Location",
+    "close": "Close",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "register": {
+    "title": "Create your account",
+    "username": "Username",
+    "usernamePlaceholder": "Your username",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "Your password",
+    "signUp": "Sign Up",
+    "alreadyHaveAccount": "Already have an account?",
+    "logIn": "Log in"
+  },
+  "setNewPassword": {
+    "title": "Set New Password",
+    "newPasswordLabel": "New Password",
+    "newPasswordPlaceholder": "********",
+    "resetButton": "Reset Password"
+  },
+  "search": {
+    "title": "Search",
+    "users": "Users",
+    "observations": "Observations",
+    "noResults": "No results found, baby."
+  },
+  "prepareObservation": {
+    "title": "Prepare Your Observation",
+    "subtitle": "Saw something pretty, baby? Let others see it too!",
+    "analyzing": "Analyzing...",
+    "uploadAnalyze": "Upload and Analyze",
+    "uploadedImageAlt": "Uploaded sky",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Give your observation a cool title",
+    "descriptionLabel": "Description (optional)",
+    "descriptionPlaceholder": "Tell us more about what you observed...",
+    "calibrationData": "Calibration Data",
+    "objectsInField": "Objects in Field",
+    "showObjects": "Show Objects ",
+    "hideObjects": "Hide Objects",
+    "objectLabel": "Object {{number}}",
+    "objectPlaceholder": "Object Name",
+    "locationLabel": "Location (optional)",
+    "latitudePlaceholder": "Latitude (e.g. 49.8397)",
+    "longitudePlaceholder": "Longitude (e.g. 24.0297)",
+    "placeNamePlaceholder": "Place name (optional)",
+    "publish": "Publish Observation"
+  },
+  "profile1": {
+    "observations": "Observations",
+    "close": "Close",
+    "noObjects": "No objects found.",
+    "showObjects": "Show Objects ",
+    "hideObjects": "Hide Objects",
+    "stats": {
+      "observationsCount": " observations",
+      "starBaby": "star baby"
+    }
+  }
+}
