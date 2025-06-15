@@ -1,0 +1,334 @@
+[
+  {
+    "title": "Test for lb3",
+    "description": "really nice test tho",
+    "image_url": "http://localhost:8000/images/7c93357d579c4472a639dd57941bfc5f.jpg",
+    "calibration": {
+      "ra": 32.3474367612048,
+      "dec": 18.823896496075758,
+      "radius": 49.62105600743006,
+      "orientation": 42.58805177993008,
+      "pixscale": 223.2947520334353,
+      "parity": 1.0
+    },
+    "objects_in_field": [
+      {
+        "name": "13 Ari"
+      },
+      {
+        "name": "21 And"
+      },
+      {
+        "name": "25 Tau"
+      },
+      {
+        "name": "26 Per"
+      },
+      {
+        "name": "43 And"
+      },
+      {
+        "name": "44 Per"
+      },
+      {
+        "name": "57 And"
+      },
+      {
+        "name": "6 Ari"
+      },
+      {
+        "name": "88 Peg"
+      },
+      {
+        "name": "92 Cet"
+      },
+      {
+        "name": "Almaak (γ1 And"
+      },
+      {
+        "name": "Andromeda Galaxy"
+      },
+      {
+        "name": "Gorgona (β Per"
+      },
+      {
+        "name": "Gorgonea Prima"
+      },
+      {
+        "name": "IC 341"
+      },
+      {
+        "name": "IC 353"
+      },
+      {
+        "name": "IC 354"
+      },
+      {
+        "name": "IC 360"
+      },
+      {
+        "name": "M 31"
+      },
+      {
+        "name": "NGC 224"
+      },
+      {
+        "name": "Part of the constellation Cetus (Cet"
+      },
+      {
+        "name": "Part of the constellation Eridanus (Eri"
+      },
+      {
+        "name": "Part of the constellation Pegasus (Peg"
+      },
+      {
+        "name": "Part of the constellation Perseus (Per"
+      },
+      {
+        "name": "Part of the constellation Pisces (Psc"
+      },
+      {
+        "name": "Part of the constellation Taurus (Tau"
+      },
+      {
+        "name": "Sirrah (α And"
+      },
+      {
+        "name": "The constellation Andromeda (And"
+      },
+      {
+        "name": "The constellation Aries (Ari"
+      },
+      {
+        "name": "The constellation Triangulum (Tri"
+      },
+      {
+        "name": "The star Alcyone (η Tau"
+      },
+      {
+        "name": "The star Algenib (γ Peg"
+      },
+      {
+        "name": "The star Algol"
+      },
+      {
+        "name": "The star Almach"
+      },
+      {
+        "name": "The star Alpheratz"
+      },
+      {
+        "name": "The star Atik (ζ Per"
+      },
+      {
+        "name": "The star Hamal (α Ari"
+      },
+      {
+        "name": "The star Menkar (α Cet"
+      },
+      {
+        "name": "The star Mirach (β And"
+      },
+      {
+        "name": "The star Sheratan (β Ari"
+      },
+      {
+        "name": "γ2 And"
+      },
+      {
+        "name": "δ Peg"
+      }
+    ],
+    "date": {
+      "$date": "2025-05-26T15:12:05.191Z"
+    },
+    "last_modified": {
+      "$date": "2025-05-26T15:12:05.191Z"
+    },
+    "location": {
+      "latitude": 40.4169,
+      "longitude": -3.7033,
+      "place_name": "Madrid, Spain"
+    },
+    "user_id": "6826cc8558d9eb472aad3b88",
+    "id": "683484c55a270cd22ed2d108"
+  },
+  {
+    "title": "Corona Borealis EDITED",
+    "description": "its very nice and pretty!!! EDITED",
+    "image_url": "http://localhost:8000/images/40347e6341ba491a9c59f8d128022cff.jpg",
+    "calibration": {
+      "ra": 254.509147373127,
+      "dec": 2.08598311624239,
+      "radius": 44.4739076794962,
+      "orientation": 30.369349918109265,
+      "pixscale": 70.9164333867302,
+      "parity": 1.0
+    },
+    "objects_in_field": [
+      {
+        "name": "1 Oph"
+      },
+      {
+        "name": "13 Oph"
+      },
+      {
+        "name": "21 Sco"
+      },
+      {
+        "name": "24 Ser"
+      },
+      {
+        "name": "27 Her"
+      },
+      {
+        "name": "35 Oph"
+      },
+      {
+        "name": "5 CrB"
+      },
+      {
+        "name": "55 Oph"
+      },
+      {
+        "name": "60 Oph"
+      },
+      {
+        "name": "64 Her"
+      },
+      {
+        "name": "Alphekka"
+      },
+      {
+        "name": "Ashtaroth (α CrB"
+      },
+      {
+        "name": "Cor Scorpii"
+      },
+      {
+        "name": "Cor Serpentis"
+      },
+      {
+        "name": "Eagle Nebula"
+      },
+      {
+        "name": "Gemma"
+      },
+      {
+        "name": "Gnosia"
+      },
+      {
+        "name": "IC 4592"
+      },
+      {
+        "name": "IC 4604"
+      },
+      {
+        "name": "IC 4701"
+      },
+      {
+        "name": "IC 4715"
+      },
+      {
+        "name": "Kalb al Akrab (α Sco"
+      },
+      {
+        "name": "M 16"
+      },
+      {
+        "name": "M 24"
+      },
+      {
+        "name": "NGC 6611"
+      },
+      {
+        "name": "Part of the constellation Hercules (Her"
+      },
+      {
+        "name": "Part of the constellation Sagittarius (Sgr"
+      },
+      {
+        "name": "Part of the constellation Scorpius (Sco"
+      },
+      {
+        "name": "Part of the constellation Serpens (Ser"
+      },
+      {
+        "name": "Ras Algethi (α1 Her"
+      },
+      {
+        "name": "Rutilicus (β Her"
+      },
+      {
+        "name": "Small Sgr Star Cloud"
+      },
+      {
+        "name": "The constellation Corona Borealis (CrB"
+      },
+      {
+        "name": "The constellation Ophiuchus (Oph"
+      },
+      {
+        "name": "The constellation Scutum (Sct"
+      },
+      {
+        "name": "The star Alphecca"
+      },
+      {
+        "name": "The star Antares"
+      },
+      {
+        "name": "The star Cebalrai (β Oph"
+      },
+      {
+        "name": "The star Kornephoros"
+      },
+      {
+        "name": "The star Rasalgethi"
+      },
+      {
+        "name": "The star Rasalhague (α Oph"
+      },
+      {
+        "name": "The star Sabik (η Oph"
+      },
+      {
+        "name": "The star Saik (ζ Oph"
+      },
+      {
+        "name": "The star Unukalhai"
+      },
+      {
+        "name": "The star Yed Prior"
+      },
+      {
+        "name": "Unuk Al Hay (α Ser"
+      },
+      {
+        "name": "Vespertilio"
+      },
+      {
+        "name": "Yad (δ Oph"
+      },
+      {
+        "name": "rho Oph Nebula"
+      },
+      {
+        "name": "α2 Her"
+      }
+    ],
+    "date": {
+      "$date": "2025-06-05T10:25:41.720Z"
+    },
+    "last_modified": {
+      "$date": "2025-06-05T10:26:43.351Z"
+    },
+    "location": {
+      "latitude": 49.9883,
+      "longitude": 36.2328,
+      "place_name": "Kharkiv, Ukraine"
+    },
+    "user_id": "6826cc8558d9eb472aad3b88",
+    "id": "684170a575c3e6ecc00ffa46"
+  }
+]

@@ -1,0 +1,373 @@
+[
+  {
+    "title": "Corona Borealis EDITED",
+    "description": "its very nice and pretty!!! EDITED",
+    "image_url": "http://localhost:8000/images/40347e6341ba491a9c59f8d128022cff.jpg",
+    "calibration": {
+      "ra": 254.509147373127,
+      "dec": 2.08598311624239,
+      "radius": 44.4739076794962,
+      "orientation": 30.369349918109265,
+      "pixscale": 70.9164333867302,
+      "parity": 1.0
+    },
+    "objects_in_field": [
+      {
+        "name": "1 Oph"
+      },
+      {
+        "name": "13 Oph"
+      },
+      {
+        "name": "21 Sco"
+      },
+      {
+        "name": "24 Ser"
+      },
+      {
+        "name": "27 Her"
+      },
+      {
+        "name": "35 Oph"
+      },
+      {
+        "name": "5 CrB"
+      },
+      {
+        "name": "55 Oph"
+      },
+      {
+        "name": "60 Oph"
+      },
+      {
+        "name": "64 Her"
+      },
+      {
+        "name": "Alphekka"
+      },
+      {
+        "name": "Ashtaroth (α CrB"
+      },
+      {
+        "name": "Cor Scorpii"
+      },
+      {
+        "name": "Cor Serpentis"
+      },
+      {
+        "name": "Eagle Nebula"
+      },
+      {
+        "name": "Gemma"
+      },
+      {
+        "name": "Gnosia"
+      },
+      {
+        "name": "IC 4592"
+      },
+      {
+        "name": "IC 4604"
+      },
+      {
+        "name": "IC 4701"
+      },
+      {
+        "name": "IC 4715"
+      },
+      {
+        "name": "Kalb al Akrab (α Sco"
+      },
+      {
+        "name": "M 16"
+      },
+      {
+        "name": "M 24"
+      },
+      {
+        "name": "NGC 6611"
+      },
+      {
+        "name": "Part of the constellation Hercules (Her"
+      },
+      {
+        "name": "Part of the constellation Sagittarius (Sgr"
+      },
+      {
+        "name": "Part of the constellation Scorpius (Sco"
+      },
+      {
+        "name": "Part of the constellation Serpens (Ser"
+      },
+      {
+        "name": "Ras Algethi (α1 Her"
+      },
+      {
+        "name": "Rutilicus (β Her"
+      },
+      {
+        "name": "Small Sgr Star Cloud"
+      },
+      {
+        "name": "The constellation Corona Borealis (CrB"
+      },
+      {
+        "name": "The constellation Ophiuchus (Oph"
+      },
+      {
+        "name": "The constellation Scutum (Sct"
+      },
+      {
+        "name": "The star Alphecca"
+      },
+      {
+        "name": "The star Antares"
+      },
+      {
+        "name": "The star Cebalrai (β Oph"
+      },
+      {
+        "name": "The star Kornephoros"
+      },
+      {
+        "name": "The star Rasalgethi"
+      },
+      {
+        "name": "The star Rasalhague (α Oph"
+      },
+      {
+        "name": "The star Sabik (η Oph"
+      },
+      {
+        "name": "The star Saik (ζ Oph"
+      },
+      {
+        "name": "The star Unukalhai"
+      },
+      {
+        "name": "The star Yed Prior"
+      },
+      {
+        "name": "Unuk Al Hay (α Ser"
+      },
+      {
+        "name": "Vespertilio"
+      },
+      {
+        "name": "Yad (δ Oph"
+      },
+      {
+        "name": "rho Oph Nebula"
+      },
+      {
+        "name": "α2 Her"
+      }
+    ],
+    "date": {
+      "$date": "2025-06-05T10:25:41.720Z"
+    },
+    "last_modified": {
+      "$date": "2025-06-05T10:26:43.351Z"
+    },
+    "location": {
+      "latitude": 49.9883,
+      "longitude": 36.2328,
+      "place_name": "Kharkiv, Ukraine"
+    },
+    "user_id": "6826cc8558d9eb472aad3b88",
+    "id": "684170a575c3e6ecc00ffa46"
+  },
+  {
+    "title": "Pretty baby Orion",
+    "description": "Im so happy today yay ",
+    "image_url": "http://localhost:8000/images/24ba25f82e35402cad834a322acbb033.jpg",
+    "calibration": {
+      "ra": 79.13672424126695,
+      "dec": -3.447294537208794,
+      "radius": 49.75119847716945,
+      "orientation": 32.40742954712249,
+      "pixscale": 223.88039314726254,
+      "parity": 1.0
+    },
+    "objects_in_field": [
+      {
+        "name": "112 Tau"
+      },
+      {
+        "name": "19 Ori"
+      },
+      {
+        "name": "21 CMa"
+      },
+      {
+        "name": "24 Ori"
+      },
+      {
+        "name": "25 CMa"
+      },
+      {
+        "name": "46 Ori"
+      },
+      {
+        "name": "50 Ori"
+      },
+      {
+        "name": "58 Ori"
+      },
+      {
+        "name": "87 Tau"
+      },
+      {
+        "name": "9 CMa"
+      },
+      {
+        "name": "Al Mankib"
+      },
+      {
+        "name": "Algebar (β Ori"
+      },
+      {
+        "name": "Alwazn (δ CMa"
+      },
+      {
+        "name": "Aschere (α CMa"
+      },
+      {
+        "name": "Betelgeux (α Ori"
+      },
+      {
+        "name": "Canicula"
+      },
+      {
+        "name": "Cor Tauri"
+      },
+      {
+        "name": "El Nath (β Tau"
+      },
+      {
+        "name": "Flame Nebula"
+      },
+      {
+        "name": "Great Orion Nebula"
+      },
+      {
+        "name": "IC 341"
+      },
+      {
+        "name": "IC 354"
+      },
+      {
+        "name": "IC 360"
+      },
+      {
+        "name": "IC 434"
+      },
+      {
+        "name": "M 42"
+      },
+      {
+        "name": "NGC 1909"
+      },
+      {
+        "name": "NGC 1976"
+      },
+      {
+        "name": "NGC 2237"
+      },
+      {
+        "name": "NGC 2238"
+      },
+      {
+        "name": "Orion B"
+      },
+      {
+        "name": "Orion Nebula"
+      },
+      {
+        "name": "Parilicium (α Tau"
+      },
+      {
+        "name": "Part of the constellation Auriga (Aur"
+      },
+      {
+        "name": "Part of the constellation Canis Major (CMa"
+      },
+      {
+        "name": "Part of the constellation Cetus (Cet"
+      },
+      {
+        "name": "Part of the constellation Columba (Col"
+      },
+      {
+        "name": "Part of the constellation Eridanus (Eri"
+      },
+      {
+        "name": "Part of the constellation Gemini (Gem"
+      },
+      {
+        "name": "Part of the constellation Monoceros (Mon"
+      },
+      {
+        "name": "Part of the constellation Taurus (Tau"
+      },
+      {
+        "name": "Rosette A"
+      },
+      {
+        "name": "Rosette Nebula"
+      },
+      {
+        "name": "The constellation Lepus (Lep"
+      },
+      {
+        "name": "The constellation Orion (Ori"
+      },
+      {
+        "name": "The star Adhara (ε CMa"
+      },
+      {
+        "name": "The star Aldebaran"
+      },
+      {
+        "name": "The star Alnilam (ε Ori"
+      },
+      {
+        "name": "The star Alnitak (ζ Ori"
+      },
+      {
+        "name": "The star Bellatrix (γ Ori"
+      },
+      {
+        "name": "The star Betelgeuse"
+      },
+      {
+        "name": "The star Elnath"
+      },
+      {
+        "name": "The star Rigel"
+      },
+      {
+        "name": "The star Sirius"
+      },
+      {
+        "name": "The star Wezen"
+      },
+      {
+        "name": "the Witch Head Nebula"
+      }
+    ],
+    "date": {
+      "$date": "2025-06-13T16:11:56.990Z"
+    },
+    "last_modified": {
+      "$date": "2025-06-13T16:11:56.990Z"
+    },
+    "location": {
+      "latitude": 49.9883,
+      "longitude": 36.2328,
+      "place_name": "Kharkiv, Ukraine"
+    },
+    "user_id": "6826cc8558d9eb472aad3b88",
+    "id": "684c4dcc028db65a82b6bdd8"
+  }
+]
