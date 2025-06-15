@@ -1,1 +1,723 @@
+Міністерство освіти і науки України
+Харківський національний університет радіоелектроніки
+Катедра програмної інженерії
 
+
+
+
+Лабораторна робота №3
+з дисципліни «Архітектура програмного забезпечення»
+на тему: «Розробка програмної архітектури, створення та відлагодження програмного застосунку мобільного пристрою для програмної системи»
+
+
+
+
+Виконала:
+ст. гр. ПЗПІ-22-8
+Шевченко О. О.
+Перевірив:
+ст. викл. кат. ПІ
+Сокорчук І. П.
+
+
+
+
+
+Харків 2025
+1	ІСТОРІЯ ЗМІН
+
+
+Назва	Дата	Причина змін	Версія
+Cosmorum	25.05.2025	Сформовано завдання	Version 1.0
+Cosmorum	26.05.2025	Описано виконану роботу	Version 1.0
+ 
+
+2	ЗАВДАННЯ
+
+
+Розробити архітектуру та мобільний інтерфейс проекту за темою: «Програмна система для збору, обробки та поширення астрономічних спостережень». Розробити користувацький інтерфейс, який підтримуватиме інтернаціоналізацію та локалізацію. Забезпечити управління користувачами системи, управління даними системи, створення резервних копій налаштувань та даних, експорт даних. 
+
+ 
+3  ОПИС ВИКОНАНОЇ РОБОТИ
+3.1	 Програмна архітектура мобільного застосунку програмної системи
+
+
+Архітектура мобільного застосунку побудована відповідно до патерну MVVM (Model–View–ViewModel), що дозволяє чітко відокремити логіку представлення інтерфейсу від бізнес-логіки та моделі даних. Така структура дає змогу досягти високої гнучкості, масштабованості та підтримуваності коду, а також спрощує тестування окремих компонентів. У рамках цієї архітектури модель відповідає за структуру даних користувача та спостережень, включаючи їх властивості, які отримуються з API. ViewModel виступає як посередник між моделлю та інтерфейсом, опрацьовуючи бізнес-логіку та реалізуючи асинхронну взаємодію із сервером. View, реалізований за допомогою Jetpack Compose, відповідає за відображення даних та реагує на зміни стану, які надходять від ViewModel. Уся архітектура працює в реактивному стилі, де зміни даних автоматично призводять до оновлення інтерфейсу. 
+
+3.2	 Програмні технології та компоненти мобільного застосунку
+
+У реалізації мобільного клієнта було використано сучасні інструменти та технології, орієнтовані на ефективну розробку, високу продуктивність і зручність для користувача. Основною мовою розробки обрано Kotlin, яка є рекомендованим стандартом для створення Android-застосунків. Інтерфейс створювався з використанням декларативного фреймворку Jetpack Compose, що дозволяє формувати UI як функції, які реагують на зміни стану. Для роботи з віддаленим зображенням спостережень інтегровано бібліотеку Coil, яка оптимізована для роботи з Kotlin Coroutines. Збереження даних на пристрої, таких як мова інтерфейсу або токен авторизації, відбувається через SharedPreferences. Керування станом реалізоване за допомогою бібліотеки Android ViewModel у поєднанні з Kotlin Flow, що забезпечує реактивний підхід до роботи з даними. 
+
+3.3 Бізнес-логіка програмної системи у мобільному застосунку
+
+	Бізнес-логіка мобільного застосунку зосереджена на обслуговуванні основних сценаріїв взаємодії користувача із програмною системою. Серед таких сценаріїв – автентифікація користувача через логін, перегляд власного профілю, управління особистими спостереженнями, перегляд майбутніх астрономічних подій та налаштування персоналізованого інтерфейсу. Користувач має можливість видалити власний акаунт, після чого система автоматично повертає його до стартового екрана. Спостереження отримуються у вигляді списку через асинхронні запити до API. Уся бізнес-логіка відокремлена у ViewModel, що дозволяє не перевантажувати інтерфейсні компоненти зайвою функціональністю, та забезпечує чисту архітектуру й гнучке масштабування системи.
+
+3.4 Захист даних у мобільному застосунку програмної системи
+
+Захист даних користувачів у мобільному застосунку є одним з ключових аспектів розробки. Основний механізм автентифікації базується на використанні JWT-токенів, які надсилаються серверу в заголовках HTTP-запитів після авторизації користувача. Ці токени зберігаються локально в безпечному сховищі SharedPreferences, без прямого доступу до чутливих даних, таких як паролі чи логіни. Вся взаємодія між мобільним застосунком і сервером здійснюється по захищеному протоколу HTTPS, що виключає можливість перехоплення або модифікації трафіку. Додатково, у застосунку реалізовано перевірку помилок автентифікації, зокрема автоматичний вихід користувача у випадку недійсного або простроченого токена, що знижує ризик несанкціонованого доступу до персональних даних.
+
+3.5 Взаємодія мобільного клієнта програмної системи з іншими компонентами ПЗ
+
+Мобільний застосунок є складовою більшої програмної системи та взаємодіє з іншими її компонентами через стандартизоване REST API. Застосунок здійснює запити до бекенд-сервісу, створеного на основі FastAPI, для отримання та надсилання інформації про користувача, його спостереження та майбутні астрономічні події. Окрім того, застосунок отримує відповіді щодо результатів астрометричного аналізу, синхронізуючи їх зі збереженими зображеннями. У певних сценаріях система також інтегрується з зовнішнім IoT-модулем, який відповідає за надсилання сповіщень або нагадувань на основі даних з мобільного клієнта. Така архітектура забезпечує ефективну взаємодію між усіма частинами системи, зберігаючи при цьому модульність і незалежність клієнтської логіки.
+
+3.6 Підтримка інтернаціоналізації у мобільному застосунку
+
+Інтернаціоналізація реалізована в мобільному застосунку шляхом винесення всіх текстових елементів інтерфейсу в ресурсні файли strings.xml, які мають окремі версії для кожної підтримуваної мови, зокрема української та англійської. Застосунок використовує функцію stringResource() для динамічного відображення відповідного тексту згідно з обраною локаллю. Механізм зміни мови реалізований через збереження вибору користувача у SharedPreferences, після чого система перезапускає активність з оновленими мовними налаштуваннями. Таким чином, весь інтерфейс автоматично адаптується до мови, яку обрав користувач, без необхідності перевстановлення або повторного входу. 
+
+3.7 Функціональність налаштування у мобільному застосунку
+
+У мобільному застосунку реалізовано базовий набір функцій налаштування, орієнтований на зручність та контроль користувача над власним досвідом взаємодії з системою. Крім того, через меню профілю реалізовано можливість виходу з облікового запису, що призводить до очищення токена авторизації та повернення до екрану входу. У налаштуваннях також доступна функція видалення облікового запису, яка після підтвердження надсилає відповідний запит до сервера. Наразі інтерфейс має основу для подальшого розширення функціональності, включаючи налаштування сповіщень та персоналізованих фільтрів для перегляду спостережень. 
+
+ 
+4 ВИСНОВКИ
+
+
+В результаті виконання даної лабораторної роботи було розроблено архітектуру та мобільний застосунок проекту за темою: «Програмна система для збору, обробки та поширення астрономічних спостережень». Розроблено користувацький інтерфейс, який підтримує інтернаціоналізацію та локалізацію. Забезпечено управління користувачами системи, управління даними системи, створення резервних копій налаштувань та даних, експорт даних. Скріншоти інтерфейсу наведені в Додатку Г.
+
+
+	  
+ДОДАТОК А
+Відеозапис
+
+
+	Відеозапис на YouTube: https://youtu.be/yEVrVA78SJs 
+     	Хронологічний опис відеозапису:
+00:00 - Вступ
+01:23 - Тестування реєстрації
+01:53 - Тестування авторизації
+02:06 - Дошка (до активності)
+02:50 - Профіль користувача
+03:11 - Редагування даних користувача
+03:30 - Завантаження спостереження
+04:30 - Дошка (після активності)
+04:57 - Редагування спостереження
+05:52 - Тестування пошуку
+06:32 - Події
+07:55 - Тестування багатомовності
+08:37 - Тестування експорту
+	
+
+
+
+ 
+ДОДАТОК Б
+Графічні матеріали
+
+
+ 
+Рисунок Б.1 – ER-діаграма даних
+
+ 
+Рисунок Б.2 – UML-діаграма діяльності (астрометрія)
+
+ 
+Рисунок Б.3 – UML-діаграма прецедентів
+
+ 
+Рисунок Б.4 – UML-діаграма компонентів
+
+ 
+ДОДАТОК В
+Програмний код
+
+
+В.1 MainActivity.kt
+GitHub репозиторій: https://github.com/NureShevchenkoOlesia/apz-pzpi-22-8-shevchenko-olesia/blob/298010dfbec20bc6b33069d7c47d0919735c87dd/Lab4/pzpi-22-8-shevchenko-olesia-lab4/app/src/main/java/com/example/cosmorummobile/MainActivity.kt 
+1  <?xml version="1.0" encoding="utf-8"?>
+2  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3      xmlns:tools="http://schemas.android.com/tools">
+4  
+5      <application
+6          android:allowBackup="true"
+7  
+8          android:networkSecurityConfig="@xml/network_security_config"
+9          android:dataExtractionRules="@xml/data_extraction_rules"
+10          android:fullBackupContent="@xml/backup_rules"
+11          android:icon="@mipmap/ic_launcher"
+12          android:label="@string/app_name"
+13          android:roundIcon="@mipmap/ic_launcher_round"
+14          android:supportsRtl="true"
+15          android:theme="@style/Theme.CosmorumMobile"
+16          tools:targetApi="31">
+17          <activity
+18              android:name=".MainActivity"
+19              android:exported="true"
+20              android:label="@string/app_name"
+21              android:configChanges="locale"
+22              android:theme="@style/Theme.CosmorumMobile">
+23              <intent-filter>
+24                  <action android:name="android.intent.action.MAIN" />
+25  
+26                  <category android:name="android.intent.category.LAUNCHER" />
+27              </intent-filter>
+28          </activity>
+29      </application>
+30  
+31      <uses-permission android:name="android.permission.INTERNET" />
+32  
+33  </manifest>  
+
+	В.2 EventsScreen.kt
+GitHub репозиторій: https://github.com/NureShevchenkoOlesia/apz-pzpi-22-8-shevchenko-olesia/blob/298010dfbec20bc6b33069d7c47d0919735c87dd/Lab4/pzpi-22-8-shevchenko-olesia-lab4/app/src/main/java/com/example/cosmorummobile/ui/personal/EventsScreen.kt 
+1  package com.example.cosmorummobile.ui.personal
+2  
+3  import android.os.Build
+4  import androidx.annotation.RequiresApi
+5  import androidx.compose.foundation.background
+6  import androidx.compose.foundation.layout.*
+7  import androidx.compose.foundation.lazy.LazyColumn
+8  import androidx.compose.foundation.lazy.items
+9  import androidx.compose.material3.*
+10  import androidx.compose.runtime.*
+11  import androidx.compose.ui.Alignment
+12  import androidx.compose.ui.Modifier
+13  import androidx.compose.ui.graphics.Color
+14  import androidx.compose.ui.unit.dp
+15  import kotlinx.coroutines.Dispatchers
+16  import kotlinx.coroutines.launch
+17  import kotlinx.coroutines.withContext
+18  import org.json.JSONArray
+19  import java.net.HttpURLConnection
+20  import java.net.URL
+21  import com.example.cosmorummobile.model.EventResult
+22  import com.example.cosmorummobile.model.KpIndexEntry
+23  
+24  @Composable
+25  fun EventsScreen(apiBaseUrl: String, token: String?) {
+26      val darkColorScheme = darkColorScheme(
+27          primary = Color(0xFFFFC107),
+28          onPrimary = Color.Black,
+29          secondary = Color(0xFFFFC107),
+30          onSecondary = Color.Black,
+31          background = Color(0xFF121212),
+32          onBackground = Color.White,
+33          surface = Color(0xFF1E1E1E),
+34          onSurface = Color.White,
+35          surfaceVariant = Color(0xFF2C2C2C),
+36          onSurfaceVariant = Color(0xFFB3B3B3),
+37          error = Color(0xFFCF6679),
+38          onError = Color.White
+39      )
+40  
+41      MaterialTheme(colorScheme = darkColorScheme) {
+42          EventsScreenContent(apiBaseUrl, token)
+43      }
+44  }
+45  
+46  @Composable
+47  private fun EventsScreenContent(apiBaseUrl: String, token: String?) {
+48      var events by remember { mutableStateOf(listOf<EventResult>()) }
+49      var subscribedEvents by remember { mutableStateOf(setOf<String>()) }
+50      var filterType by remember { mutableStateOf("All") }
+51      var startDate by remember { mutableStateOf("") }
+52      var endDate by remember { mutableStateOf("") }
+53      var isLoading by remember { mutableStateOf(false) }
+54      val coroutineScope = rememberCoroutineScope()
+55  
+56      suspend fun fetchEvents(apiBaseUrl: String): List<EventResult> = withContext(Dispatchers.IO) {
+57          try {
+58              val url = URL("$apiBaseUrl/events/events")
+59              val conn = url.openConnection() as HttpURLConnection
+60              conn.requestMethod = "GET"
+61              val response = conn.inputStream.bufferedReader().readText()
+62              val jsonArray = JSONArray(response)
+63              List(jsonArray.length()) { i ->
+64                  val obj = jsonArray.getJSONObject(i)
+65                  val kpRaw = obj.optJSONArray("kp_index")
+66                  val kpList = mutableListOf<KpIndexEntry>()
+67                  if (kpRaw != null) {
+68                      for (j in 0 until kpRaw.length()) {
+69                          val entry = kpRaw.getJSONObject(j)
+70                          if (entry.has("kp_index") && entry.has("observedTime")) {
+71                              kpList.add(
+72                                  KpIndexEntry(
+73                                      observedTime = entry.getString("observedTime"),
+74                                      kp_index = entry.getDouble("kp_index")
+75                                  )
+76                              )
+77                          }
+78                      }
+79                  }
+80                  EventResult(
+81                      _id = obj.getString("_id"),
+82                      title = obj.getString("title"),
+83                      start_time = obj.optString("start_time", null),
+84                      event_date = obj.optString("event_date", null),
+85                      type = obj.getString("type"),
+86                      class_type = obj.optString("class_type", null),
+87                      kp_index = kpList,
+88                      link = obj.optString("link", null)
+89                  )
+90              }
+91          } catch (e: Exception) {
+92              emptyList()
+93          }
+94      }
+95  
+96      suspend fun subscribeToEvent(apiBaseUrl: String, eventId: String, token: String?): Boolean =
+97          withContext(Dispatchers.IO) {
+98              try {
+99                  val url = URL("$apiBaseUrl/events/events/$eventId/subscribe")
+100                  val conn = url.openConnection() as HttpURLConnection
+101                  conn.requestMethod = "POST"
+102                  conn.setRequestProperty("Authorization", "Bearer $token")
+103                  conn.doOutput = true
+104                  conn.connect()
+105                  conn.responseCode == 200
+106              } catch (e: Exception) {
+107                  false
+108              }
+109          }
+110  
+111      LaunchedEffect(Unit) {
+112          isLoading = true
+113          val fetchedEvents = fetchEvents(apiBaseUrl)
+114          events = fetchedEvents
+115          isLoading = false
+116      }
+117  
+118      Column(
+119          modifier = Modifier
+120              .fillMaxSize()
+121              .background(MaterialTheme.colorScheme.background)
+122              .padding(horizontal = 16.dp, vertical = 12.dp)
+123      ) {
+124          Row(
+125              verticalAlignment = Alignment.CenterVertically,
+126              modifier = Modifier
+127                  .fillMaxWidth()
+128                  .padding(top = 40.dp),
+129                  horizontalArrangement = Arrangement.spacedBy(12.dp)
+130          ) {
+131              DropdownMenuBox(
+132                  filterType,
+133                  onSelect = { filterType = it },
+134                  modifier = Modifier.width(IntrinsicSize.Min)
+135              )
+136              Spacer(modifier = Modifier.weight(1f))
+137              Button(
+138                  onClick = {
+139                      filterType = "All"
+140                      startDate = ""
+141                      endDate = ""
+142                  },
+143                  colors = ButtonDefaults.buttonColors(
+144                      containerColor = MaterialTheme.colorScheme.primary,
+145                      contentColor = MaterialTheme.colorScheme.onPrimary
+146                  ),
+147                  modifier = Modifier
+148                      .height(48.dp)
+149              ) {
+150                  Text("Clear")
+151              }
+152          }
+153  
+154          Spacer(modifier = Modifier.height(16.dp))
+155  
+156          if (isLoading) {
+157              Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+158                  CircularProgressIndicator()
+159              }
+160          } else {
+161              LazyColumn(
+162                  modifier = Modifier.fillMaxSize(),
+163                  verticalArrangement = Arrangement.spacedBy(8.dp)
+164              ) {
+165                  val filtered = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+166                      filteredEvents(events, filterType)
+167                  } else events
+168  
+169                  items(filtered) { event ->
+170                      EventItem(
+171                          event = event,
+172                          isSubscribed = subscribedEvents.contains(event._id),
+173                          onSubscribe = {
+174                              coroutineScope.launch {
+175                                  val success = subscribeToEvent(apiBaseUrl, event._id, token)
+176                                  if (success) {
+177                                      subscribedEvents = subscribedEvents + event._id
+178                                  }
+179                              }
+180                          }
+181                      )
+182                  }
+183              }
+184          }
+185      }
+186  }
+187  
+188  @Composable
+189  fun EventItem(
+190      event: EventResult,
+191      isSubscribed: Boolean,
+192      onSubscribe: () -> Unit
+193  ) {
+194      Card(
+195          modifier = Modifier
+196              .fillMaxWidth(),
+197          colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+198          elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+199      ) {
+200          Column(modifier = Modifier.padding(16.dp)) {
+201              Text(
+202                  text = event.title,
+203                  style = MaterialTheme.typography.titleMedium,
+204                  color = MaterialTheme.colorScheme.onSurface
+205              )
+206              Spacer(modifier = Modifier.height(4.dp))
+207              Text(
+208                  text = event.start_time ?: event.event_date ?: "No date",
+209                  style = MaterialTheme.typography.bodySmall,
+210                  color = MaterialTheme.colorScheme.onSurfaceVariant
+211              )
+212              Spacer(modifier = Modifier.height(8.dp))
+213              if (event.type == "FLR") {
+214                  Text(
+215                      text = "Class: ${event.class_type ?: "N/A"}",
+216                      style = MaterialTheme.typography.bodyMedium,
+217                      color = MaterialTheme.colorScheme.onSurface
+218                  )
+219              } else if (event.type == "GST") {
+220                  event.kp_index?.forEach { kpEntry ->
+221                      Text(
+222                          text = "${kpEntry.observedTime} - Kp Index: ${kpEntry.kp_index}",
+223                          style = MaterialTheme.typography.bodySmall,
+224                          color = MaterialTheme.colorScheme.onSurface
+225                      )
+226                  }
+227              }
+228              Spacer(modifier = Modifier.height(12.dp))
+229              Button(
+230                  onClick = onSubscribe,
+231                  enabled = !isSubscribed,
+232                  colors = ButtonDefaults.buttonColors(
+233                      containerColor = if (isSubscribed) Color.Gray else MaterialTheme.colorScheme.primary,
+234                      contentColor = if (isSubscribed) Color.White else MaterialTheme.colorScheme.onPrimary
+235                  ),
+236                  modifier = Modifier.align(Alignment.End)
+237              ) {
+238                  Text(if (isSubscribed) "Following" else "Follow")
+239              }
+240          }
+241      }
+242  }
+243  
+244  @Composable
+245  fun DropdownMenuBox(selected: String, onSelect: (String) -> Unit, modifier: Modifier = Modifier) {
+246      var expanded by remember { mutableStateOf(false) }
+247      Box(modifier = modifier) {
+248          Button(
+249              onClick = { expanded = true },
+250              colors = ButtonDefaults.buttonColors(
+251                  containerColor = MaterialTheme.colorScheme.primary,
+252                  contentColor = MaterialTheme.colorScheme.onPrimary
+253              ),
+254              modifier = Modifier.fillMaxWidth()
+255          ) {
+256              Text(selected)
+257          }
+258          DropdownMenu(
+259              expanded = expanded,
+260              onDismissRequest = { expanded = false },
+261              modifier = Modifier
+262                  .background(MaterialTheme.colorScheme.surface)
+263          ) {
+264              listOf("All", "FLR", "GST").forEach {
+265                  DropdownMenuItem(
+266                      onClick = {
+267                          onSelect(it)
+268                          expanded = false
+269                      },
+270                      text = { Text(it) }
+271                  )
+272              }
+273          }
+274      }
+275  }
+276  
+277  @RequiresApi(Build.VERSION_CODES.O)
+278  fun filteredEvents(
+279      events: List<EventResult>,
+280      type: String
+281  ): List<EventResult> {
+282      return events.filter { event ->
+283          val typeOk = type == "All" || event.type == type
+284          typeOk
+285      }
+286  }
+
+В.3 SearchScreen.kt
+GitHub репозиторій: https://github.com/NureShevchenkoOlesia/apz-pzpi-22-8-shevchenko-olesia/blob/298010dfbec20bc6b33069d7c47d0919735c87dd/Lab4/pzpi-22-8-shevchenko-olesia-lab4/app/src/main/java/com/example/cosmorummobile/ui/personal/SearchScreen.kt 
+1  package com.example.cosmorummobile.ui.search
+2  
+3  import androidx.compose.foundation.Image
+4  import androidx.compose.foundation.background
+5  import androidx.compose.foundation.layout.*
+6  import androidx.compose.foundation.lazy.LazyColumn
+7  import androidx.compose.foundation.lazy.items
+8  import androidx.compose.material3.*
+9  import androidx.compose.runtime.*
+10  import androidx.compose.ui.Alignment
+11  import androidx.compose.ui.Modifier
+12  import androidx.compose.ui.graphics.Color
+13  import androidx.compose.ui.text.input.TextFieldValue
+14  import androidx.compose.ui.unit.dp
+15  import coil.compose.rememberAsyncImagePainter
+16  import kotlinx.coroutines.Dispatchers
+17  import kotlinx.coroutines.withContext
+18  import kotlinx.coroutines.launch
+19  import org.json.JSONObject
+20  import java.net.HttpURLConnection
+21  import java.net.URL
+22  
+23  data class UserResult(
+24      val id: String,
+25      val username: String,
+26      val avatarUrl: String,
+27      val bio: String
+28  )
+29  
+30  data class ObservationResult(
+31      val id: String,
+32      val title: String,
+33      val description: String,
+34      val imageUrl: String,
+35      val userId: String
+36  )
+37  
+38  @Composable
+39  fun SearchScreen(apiBaseUrl: String) {
+40      var searchQuery by remember { mutableStateOf(TextFieldValue("")) }
+41      var users by remember { mutableStateOf(listOf<UserResult>()) }
+42      var observations by remember { mutableStateOf(listOf<ObservationResult>()) }
+43      var isLoading by remember { mutableStateOf(false) }
+44      var error by remember { mutableStateOf<String?>(null) }
+45      val scope = rememberCoroutineScope()
+46  
+47      suspend fun performSearch(
+48          apiBaseUrl: String,
+49          query: String
+50      ): Pair<List<UserResult>, List<ObservationResult>> = withContext(Dispatchers.IO) {
+51          val url = URL("$apiBaseUrl/search?q=${query}&filter=all")
+52          val connection = url.openConnection() as HttpURLConnection
+53          connection.requestMethod = "GET"
+54          try {
+55              val response = connection.inputStream.bufferedReader().readText()
+56              val json = JSONObject(response)
+57  
+58              val usersJson = json.getJSONArray("users")
+59              val observationsJson = json.getJSONArray("observations")
+60  
+61              val users = List(usersJson.length()) { i ->
+62                  val u = usersJson.getJSONObject(i)
+63                  UserResult(
+64                      id = u.getString("id"),
+65                      username = u.getString("username"),
+66                      avatarUrl = u.optString("avatar_url?.replace(\"localhost\", \"10.0.2.2\")", ""),
+67                      bio = u.optString("bio", "")
+68                  )
+69              }
+70  
+71              val observations = List(observationsJson.length()) { i ->
+72                  val o = observationsJson.getJSONObject(i)
+73                  ObservationResult(
+74                      id = o.getString("id"),
+75                      title = o.getString("title"),
+76                      description = o.optString("description", ""),
+77                      imageUrl = o.optString("image_url?.replace(\"localhost\", \"10.0.2.2\")", ""),
+78                      userId = o.getString("user_id")
+79                  )
+80              }
+81  
+82              users to observations
+83          } finally {
+84              connection.disconnect()
+85          }
+86      }
+87  
+88      Column(
+89          modifier = Modifier
+90              .fillMaxSize()
+91              .padding(24.dp)
+92              .background(Color.Black),
+93          horizontalAlignment = Alignment.CenterHorizontally
+94      ) {
+95          OutlinedTextField(
+96              value = searchQuery,
+97              onValueChange = { searchQuery = it },
+98              label = { Text("Search", color = Color.LightGray) },
+99              modifier = Modifier.fillMaxWidth(),
+100              colors = OutlinedTextFieldDefaults.colors(
+101                  focusedBorderColor = Color.White,
+102                  unfocusedBorderColor = Color.Gray,
+103                  cursorColor = Color.White,
+104                  focusedLabelColor = Color.White,
+105                  unfocusedLabelColor = Color.Gray,
+106                  focusedTextColor = Color.White,
+107                  unfocusedTextColor = Color.White
+108              )
+109          )
+110  
+111          Spacer(modifier = Modifier.height(24.dp))
+112  
+113          Button(
+114              onClick = {
+115                  isLoading = true
+116                  error = null
+117                  scope.launch {
+118                      try {
+119                          val (u, o) = performSearch(apiBaseUrl, searchQuery.text)
+120                          users = u
+121                          observations = o
+122                      } catch (e: Exception) {
+123                          error = "Search failed: ${e.message}"
+124                      } finally {
+125                          isLoading = false
+126                      }
+127                  }
+128              },
+129              enabled = searchQuery.text.isNotBlank(),
+130              modifier = Modifier.align(Alignment.End),
+131              colors = ButtonDefaults.buttonColors(containerColor = Color.DarkGray)
+132          ) {
+133              Text("Search", color = Color.White)
+134          }
+135  
+136          Spacer(modifier = Modifier.height(32.dp))
+137  
+138          when {
+139              isLoading -> CircularProgressIndicator(
+140                  modifier = Modifier.align(Alignment.CenterHorizontally),
+141                  color = Color.White
+142              )
+143  
+144              error != null -> Text(error!!, color = Color.Red)
+145  
+146              users.isEmpty() && observations.isEmpty() -> Text(
+147                  "No results found.",
+148                  color = Color.Gray
+149              )
+150  
+151              else -> LazyColumn(
+152                  modifier = Modifier.fillMaxWidth(),
+153                  verticalArrangement = Arrangement.spacedBy(24.dp)
+154              ) {
+155                  if (users.isNotEmpty()) {
+156                      item {
+157                          Text(
+158                              "Users",
+159                              style = MaterialTheme.typography.titleLarge,
+160                              color = Color.White,
+161                              modifier = Modifier.padding(bottom = 8.dp)
+162                          )
+163                      }
+164                      items(users) { user -> UserItem(user) }
+165                  }
+166  
+167                  if (observations.isNotEmpty()) {
+168                      item {
+169                          Text(
+170                              "Observations",
+171                              style = MaterialTheme.typography.titleLarge,
+172                              color = Color.White,
+173                              modifier = Modifier.padding(top = 16.dp, bottom = 8.dp)
+174                          )
+175                      }
+176                      items(observations) { obs -> ObservationItem(obs) }
+177                  }
+178              }
+179          }
+180      }
+181  }
+182  
+183  @Composable
+184  fun UserItem(user: UserResult) {
+185      Card(
+186          modifier = Modifier
+187              .fillMaxWidth()
+188              .padding(horizontal = 8.dp),
+189          colors = CardDefaults.cardColors(containerColor = Color(0xFF1E1E1E)),
+190          elevation = CardDefaults.cardElevation(8.dp)
+191      ) {
+192          Row(
+193              modifier = Modifier
+194                  .padding(16.dp),
+195              verticalAlignment = Alignment.CenterVertically
+196          ) {
+197              Column {
+198                  Text(
+199                      text = user.username,
+200                      style = MaterialTheme.typography.titleMedium,
+201                      color = Color.White
+202                  )
+203                  Text(
+204                      text = user.bio,
+205                      style = MaterialTheme.typography.bodyMedium,
+206                      color = Color.LightGray
+207                  )
+208              }
+209          }
+210      }
+211  }
+212  
+213  @Composable
+214  fun ObservationItem(obs: ObservationResult) {
+215      Card(
+216          modifier = Modifier
+217              .fillMaxWidth()
+218              .padding(horizontal = 8.dp),
+219          colors = CardDefaults.cardColors(containerColor = Color(0xFF1E1E1E)),
+220          elevation = CardDefaults.cardElevation(8.dp)
+221      ) {
+222          Column(
+223              modifier = Modifier
+224                  .padding(16.dp)
+225          ) {
+226              Text(
+227                  text = obs.title,
+228                  style = MaterialTheme.typography.titleMedium,
+229                  color = Color.White
+230              )
+231              Spacer(modifier = Modifier.height(4.dp))
+232              Text(
+233                  text = obs.description,
+234                  style = MaterialTheme.typography.bodyMedium,
+235                  color = Color.LightGray
+236              )
+237              Spacer(modifier = Modifier.height(12.dp))
+238  
+239          }
+240      }
+241  } 
+ДОДАТОК Г
+Скріншоти інтерфейсу мобільного-клієнта
+ 
+ 
+Рисунок Г.1 – Сторінка реєстрації
+
+ 
+Рисунок Г.2 – Сторінка авторизації
+
+ 
+Рисунок Г.3 – Дошка
+
+ 
+Рисунок Г.4 – Профіль користувача
+
+ 
+Рисунок Г.5 – Сторінка редагування профілю
+
+ 
+Рисунок Г.6 – Сторінка завантаження спостережень
+
+ 
+Рисунок Г.7 – Сторінка підготовки спостережень
+
+ 
+Рисунок Г.8 – Сторінка завантаження спостережень
+
+ 
+Рисунок Г.9 – Сторінка пошуку
+
+ 
+Рисунок Г.10 – Сторінка подій
