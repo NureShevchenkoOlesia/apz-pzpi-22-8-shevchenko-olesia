@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Косморум</string>
+    <string name="login_title">Увійти</string>
+    <string name="login_username_label">Нік користувача</string>
+    <string name="login_password_label">Пароль</string>
+    <string name="login_button">Увійти</string>
+    <string name="forgot_password">Забули пароль?</string>
+    <string name="signup_prompt">Немає акаунта? Зареєструватися</string>
+    <string name="register_title">Реєстрація</string>
+    <string name="register_username_label">Ім’я користувача</string>
+    <string name="register_email_label">Електронна пошта</string>
+    <string name="register_password_label">Пароль</string>
+    <string name="register_button">Зареєструватися</string>
+    <string name="logout">Вийти</string>
+    <string name="delete_account">Видалити акаунт</string>
+    <string name="profile">Профіль</string>
+    <string name="search">Пошук</string>
+    <string name="dashboard">Нещодавні</string>
+    <string name="new_observation">Нове спостереження</string>
+    <string name="settings">Налаштування</string>
+    <string name="events">Події</string>
+    <string name="language_toggle">Мова</string>
+    <string name="no_observations_yet">Ви ще не маєте спостережень.</string>
+</resources>
