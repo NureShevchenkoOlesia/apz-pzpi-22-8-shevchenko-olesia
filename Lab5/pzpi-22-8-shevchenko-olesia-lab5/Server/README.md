@@ -51,31 +51,31 @@ MOBILE_URL=http://localhost:8080
 uvicorn main:app --reload
 ```
 
-## Основні функції API
-
-Реєстрація користувача:	/auth/register	POST
-Логін та отримання токена:	/auth/login	POST
-Скидання пароля:	/auth/request-password-reset	POST
-Створення/редагування профілю:	/users/me	GET/PUT
-Завантаження астроспостереження:	/observations/	POST
-Публікація подій:	/events/	POST
-Отримання подій за фільтрами:	/events/search	GET
-Нагадування про події (через SendGrid):	автоматично	
+## Основні функції API  
+  
+Реєстрація користувача:	/auth/register	POST  
+Логін та отримання токена:	/auth/login	POST  
+Скидання пароля:	/auth/request-password-reset	POST  
+Створення/редагування профілю:	/users/me	GET/PUT  
+Завантаження астроспостереження:	/observations/	POST  
+Публікація подій:	/events/	POST  
+Отримання подій за фільтрами:	/events/search	GET  
+Нагадування про події (через SendGrid):	автоматично  
 
 ## Структура серверної частини
 
-backend/
+backend/  
+│  
+├── main.py               # Точка входу FastAPI  
+├── .env.example          # Приклад змінних середовища  
+├── requirements.txt      # Залежності Python  
 │
-├── main.py               # Точка входу FastAPI
-├── .env.example          # Приклад змінних середовища
-├── requirements.txt      # Залежності Python
-│
-├── app/
-│   ├── routes/           # Ендпоінти (автентифікація, користувачі, події тощо)
-│   ├── models/           # Pydantic-моделі (DTO)
-│   ├── db/               # Підключення до MongoDB (motor)
-│   ├── services/         # Бізнес-логіка (email, обробка фото)
-│   └── utils/            # Допоміжні утиліти
+├── app/  
+│   ├── routes/           # Ендпоінти (автентифікація, користувачі, події тощо)  
+│   ├── models/           # Pydantic-моделі (DTO)  
+│   ├── db/               # Підключення до MongoDB (motor)  
+│   ├── services/         # Бізнес-логіка (email, обробка фото)  
+│   └── utils/            # Допоміжні утиліти  
 
 
 ## Безпека
