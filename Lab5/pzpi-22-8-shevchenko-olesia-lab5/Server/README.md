@@ -64,6 +64,7 @@ uvicorn main:app --reload
 
 ## Структура серверної частини
 
+```bash
 backend/  
 │  
 ├── main.py               # Точка входу FastAPI  
@@ -76,7 +77,7 @@ backend/
 │   ├── db/               # Підключення до MongoDB (motor)  
 │   ├── services/         # Бізнес-логіка (email, обробка фото)  
 │   └── utils/            # Допоміжні утиліти  
-
+```
 
 ## Безпека
 
