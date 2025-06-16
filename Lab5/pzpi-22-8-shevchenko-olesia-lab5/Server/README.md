@@ -28,8 +28,6 @@ Cosmorum – це платорма для збору, обробки та пош
 
 ## Розгортання
 
-### 1. Клонування репозиторію
-
 ```bash
 git clone https://github.com/NureShevchenkoOlesia/apz-pzpi-22-8-shevchenko-olesia/tree/53669c18ac15bacbbf1695a691dea7f950500468/Lab5/pzpi-22-8-shevchenko-olesia-lab5/Server 
 cd COSMORUM
